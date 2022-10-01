@@ -1,5 +1,7 @@
+#!/bin/sh
 
-
-for i in {1..1000}; do
-  curl -s http://localhost:1234/info | jq -r '[.hostname, .version] | @tsv'
+while(true); do
+  curl http://localhost/info #| jq -r '[.hostname, .version] | @tsv'
+  echo ""
+  #sleep 1
 done
